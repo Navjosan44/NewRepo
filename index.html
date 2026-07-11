@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Management System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!--==================== HEADER ====================-->
+
+    <header>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div>
+
+                <h1>Student Management System</h1>
+
+                <p>PHP CRUD API Dashboard</p>
+
+            </div>
+
+        </div>
+
+        <button id="refreshBtn">
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Refresh
+
+        </button>
+
+    </header>
+
+
+
+    <!--==================== SEARCH ====================-->
+
+    <section class="search-card">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search Student Name...">
+
+        </div>
+
+    </section>
+
+
+
+    <!--==================== FORM ====================-->
+
+    <section class="form-card">
+
+        <h2>
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Add Student
+
+        </h2>
+
+        <form id="studentForm">
+
+            <input
+                type="hidden"
+                id="studentId">
+
+            <div class="form-group">
+
+                <label>
+
+                    Student Name
+
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter student name">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+
+                    Age
+
+                </label>
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Enter age">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+
+                    City
+
+                </label>
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Enter city">
+
+            </div>
+
+
+
+            <div class="button-group">
+
+                <button
+                    type="submit"
+                    id="saveBtn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Student
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="updateBtn">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Update Student
+
+                </button>
+
+
+                <button
+                    type="reset"
+                    id="clearBtn">
+
+                    <i class="fa-solid fa-broom"></i>
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <!--==================== TABLE ====================-->
+
+    <section class="table-card">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-users"></i>
+
+                Student List
+
+            </h2>
+
+            <span id="totalRecords">
+
+                Total : 0
+
+            </span>
+
+        </div>
+
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Age</th>
+
+                        <th>City</th>
+
+                        <th>Edit</th>
+
+                        <th>Delete</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="table-data">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!--==================== EDIT MODAL ====================-->
+
+<div class="modal" id="editModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Edit Student</h2>
+
+            <span id="closeModal">&times;</span>
+
+        </div>
+
+        <form id="editForm">
+
+            <input
+                type="hidden"
+                id="editId">
+
+            <div class="form-group">
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    id="editName">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Age</label>
+
+                <input
+                    type="number"
+                    id="editAge">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>City</label>
+
+                <input
+                    type="text"
+                    id="editCity">
+
+            </div>
+
+            <button
+                type="submit"
+                id="modalUpdate">
+
+                Update Student
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!--==================== LOADER ====================-->
+
+<div class="loader" id="loader">
+
+    <div class="spinner"></div>
+
+</div>
+
+
+
+<!--==================== TOAST ====================-->
+
+<div id="toast">
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
